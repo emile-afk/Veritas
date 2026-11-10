@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>VERITAS — Enquête sur les faits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">V</span><span>VERITAS<span class="brand-dot">.</span></span></a>
+    <nav><a href="#fonctionnement">Fonctionnement</a><a href="#limites">Méthode</a></nav>
+    <span class="status"><i></i> Moteur de vérification</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> VÉRIFICATION INDÉPENDANTE DES AFFIRMATIONS</div>
+      <h1>La vérité mérite<br><em>des preuves.</em></h1>
+      <p class="intro">Soumets une affirmation. VERITAS recherche les vérifications publiées et te montre les sources, les conclusions et les limites des preuves.</p>
+
+      <section class="search-panel" aria-label="Vérifier une affirmation">
+        <label for="claim">QUELLE AFFIRMATION VEUX-TU VÉRIFIER?</label>
+        <textarea id="claim" rows="3" maxlength="1000" placeholder="Ex. : Les humains ont marché sur la Lune en 1969."></textarea>
+        <div class="panel-bottom">
+          <span class="hint"><span class="spark">✦</span> Une affirmation précise donne de meilleurs résultats.</span>
+          <button id="checkBtn"><span>Vérifier les faits</span><b>→</b></button>
+        </div>
+        <div class="error" id="error" role="alert"></div>
+      </section>
+      <div class="examples"><span>ESSAYER :</span><button class="example" data-claim="Les humains ont marché sur la Lune en 1969.">Alunissage de 1969</button><button class="example" data-claim="Les vaccins causent l'autisme.">Vaccins et autisme</button><button class="example" data-claim="Le Canada a 10 provinces.">Les provinces du Canada</button></div>
+    </section>
+
+    <section class="results hidden" id="results" aria-live="polite">
+      <div class="result-head"><div><div class="eyebrow">RAPPORT D'ENQUÊTE</div><h2>Résultat de la recherche</h2></div><button class="reset" id="resetBtn">Nouvelle recherche ↗</button></div>
+      <div class="claim-card"><div class="mini-label">AFFIRMATION SOUMISE</div><p id="submittedClaim"></p></div>
+      <div class="verdict-card" id="verdictCard">
+        <div class="verdict-icon" id="verdictIcon">?</div>
+        <div class="verdict-main"><div class="mini-label">ÉTAT DES VÉRIFICATIONS PUBLIÉES</div><h3 id="verdictTitle">Recherche en cours</h3><p id="verdictText"></p></div>
+        <div class="verdict-tag" id="verdictTag">EN COURS</div>
+      </div>
+      <div class="section-title"><h3>Sources de vérification</h3><span id="sourceCount">0 source</span></div>
+      <div id="sources" class="sources"></div>
+      <div class="method-note"><span>ⓘ</span><p><strong>À comprendre :</strong> VERITAS recherche des vérifications publiées par des organismes spécialisés. L'absence de résultat ne prouve pas qu'une affirmation est fausse. Une vérification peut aussi être partielle ou dépendre du contexte.</p></div>
+    </section>
+
+    <section class="how" id="fonctionnement">
+      <div class="eyebrow">NOTRE APPROCHE</div>
+      <h2>Pas une opinion.<br><em>Une piste de preuves.</em></h2>
+      <div class="steps">
+        <article><span>01</span><h3>Recherche</h3><p>La plateforme cherche si des organismes de vérification ont déjà enquêté sur l'affirmation.</p></article>
+        <article><span>02</span><h3>Sources</h3><p>Chaque résultat renvoie vers l'article original afin que tu puisses lire la méthode et les preuves.</p></article>
+        <article><span>03</span><h3>Prudence</h3><p>Si aucune vérification pertinente n'est trouvée, le résultat reste indéterminé plutôt que d'inventer un verdict.</p></article>
+      </div>
+    </section>
+
+    <section class="limits" id="limites">
+      <div class="limit-symbol">◎</div><div><h3>La transparence avant tout</h3><p>Cette première version interroge l'API Google Fact Check Tools. Elle ne vérifie pas encore automatiquement les images, les vidéos ou toutes les nouvelles du Web. Les verdicts affichés proviennent des vérificateurs cités, pas d'une certitude absolue de VERITAS.</p></div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">V</span><span>VERITAS<span class="brand-dot">.</span></span></a><span>La vérité mérite des preuves.</span><span>Prototype MVP · 2026</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
